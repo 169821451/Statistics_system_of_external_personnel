@@ -59,27 +59,33 @@ void login::on_denglu_clicked()
     // 读取ini文件中的用户名及密码
 
 
-    Username = settings->value("Users/UsreName").toString();
+    Username = ui->lineEdit->text();
 
-    Password = settings->value("Users/PassWord").toString();
+    Password = ui->lineEdit_2->text();
 
-    std::string user = Username.toStdString();
-    std::string pass = Password.toStdString();
-
-
-    if (ui->lineEdit->text().toStdString() == user && ui->lineEdit_2->text().toStdString() == pass )
+    if(Username == "")
+        QMessageBox::warning(this,"","Username is empty");
+    else if(Password == "")
+        QMessageBox::warning(this,"","Password is empty");
+    else
     {
+        // sql语句在数据库中进行查询验证
+        QString S = QString("select * from public.user where username='%1'and password='%2' ").arg(Username).arg(Password);
+        QSqlQuery query;
+        query.exec(S);
+        if(query.first())
+        {
+            QMessageBox::information(NULL,"sucess","Login Sucess",QMessageBox::Yes);
+        }
+        else
+        {
+            QMessageBox::warning(NULL,"Error","Login Error,please try again!",QMessageBox::Ok);
+            return;
+        }
+
         qDebug()<<"123";
         accept();
     }
-    else
-    {
-        QMessageBox::information(this,"waring","password wrong,please try again!",QMessageBox::Ok);
-        return;
-    }
-
-
-
 
 
 

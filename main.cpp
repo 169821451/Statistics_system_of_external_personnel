@@ -15,15 +15,33 @@ int main(int argc, char *argv[])
     MainWindow *w;
     w = new MainWindow;
 
-    if(login.exec() == QDialog::Accepted)
-    {
-        w->show();
+    // 建立数据库连接
+    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
+    db.setHostName("127.0.0.1");
+    db.setDatabaseName("operatesql");
+    db.setPort(3306);
+    db.setUserName("root");
+    db.setPassword("toor");
 
+    if(db.open())
+    {
+        if(login.exec() == QDialog::Accepted)
+        {
+            w->show();
+        }
+        else {
+            QMessageBox::information(nullptr,"a","aaa",QMessageBox::Ok);
+            return 0;
+        }
     }
-    else {
-        QMessageBox::information(nullptr,"a","aaa",QMessageBox::Ok);
-        return -1;
+    else
+    {
+        qDebug()<<db.lastError().text();
+        QMessageBox::warning(NULL,"error","open mysql failed",QMessageBox::Ok);
+        return 0;
     }
+
+
 
     return a.exec();
 

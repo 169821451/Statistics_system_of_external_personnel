@@ -9,11 +9,14 @@
 #include <QMessageBox>
 #include <QGraphicsDropShadowEffect>
 #include <QTextCodec>
+#include <QSqlDatabase>
 #include <QDebug>
+#include <QSqlQuery>
+#include <QSqlError>
 
 
 
-//#include "mainwindow.h"
+
 
 class mainwindow;
 
@@ -29,17 +32,18 @@ public:
     explicit login(QWidget *parent = nullptr);
     ~login();
 
-    mainwindow* w;
-
+    // 声明INI文件指针
     QSettings* settings;
-
+    // ini文件路径
     QString UserPath;
-
+    //
     QString Username;
 
     QString Password;
 
     QByteArray m_passWord;
+
+    // 注册界面类指针
 
 
 private slots:
@@ -47,6 +51,8 @@ private slots:
 
 private:
     Ui::login *ui;
+
+
 
 };
 
