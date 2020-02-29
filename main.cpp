@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
     // 建立数据库连接
     QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
     db.setHostName("127.0.0.1");
-    db.setDatabaseName("operatesql");
+    db.setDatabaseName("user");
     db.setPort(3306);
     db.setUserName("root");
     db.setPassword("toor");

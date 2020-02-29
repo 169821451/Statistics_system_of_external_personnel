@@ -1,21 +1,10 @@
 #ifndef LOGIN_H
 #define LOGIN_H
 
-#include <QDialog>
-#include <QString>
-#include <QSettings>
-#include <QFileInfo>
-#include <QByteArray>
-#include <QMessageBox>
-#include <QGraphicsDropShadowEffect>
-#include <QTextCodec>
-#include <QSqlDatabase>
-#include <QDebug>
-#include <QSqlQuery>
-#include <QSqlError>
 
 
 
+#include "logon.h"
 
 
 class mainwindow;
@@ -44,10 +33,12 @@ public:
     QByteArray m_passWord;
 
     // 注册界面类指针
-
+    logon* on;
 
 private slots:
     void on_denglu_clicked();
+
+    void on_zhuce_clicked();
 
 private:
     Ui::login *ui;

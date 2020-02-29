@@ -15,6 +15,9 @@ login::login(QWidget *parent) :
 
     m_passWord = ui->lineEdit_2->text().toLatin1();
 
+    // 初始化注册窗口指针
+    on = new logon;
+
     // 按钮加阴影效果
     QGraphicsDropShadowEffect *shadow_effect = new QGraphicsDropShadowEffect(this);
     shadow_effect->setOffset(5, 5);
@@ -70,9 +73,9 @@ void login::on_denglu_clicked()
     else
     {
         // sql语句在数据库中进行查询验证
-        QString S = QString("select * from public.user where username='%1'and password='%2' ").arg(Username).arg(Password);
+        QString select = QString("select * from user.username where username='%1'and password='%2' ").arg(Username).arg(Password);
         QSqlQuery query;
-        query.exec(S);
+        query.exec(select);
         if(query.first())
         {
             QMessageBox::information(NULL,"sucess","Login Sucess",QMessageBox::Yes);
@@ -89,4 +92,9 @@ void login::on_denglu_clicked()
 
 
 
+}
+
+void login::on_zhuce_clicked()
+{
+    on->exec();
 }

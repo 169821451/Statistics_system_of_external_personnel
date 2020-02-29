@@ -27,15 +27,18 @@ CONFIG += c++11
 
 SOURCES += \
         login.cpp \
+        logon.cpp \
         main.cpp \
         mainwindow.cpp
 
 HEADERS += \
         login.h \
+        logon.h \
         mainwindow.h
 
 FORMS += \
         login.ui \
+        logon.ui \
         mainwindow.ui
 
 # Default rules for deployment.
