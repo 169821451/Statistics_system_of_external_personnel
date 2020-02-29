@@ -13,6 +13,7 @@
 #include <QDebug>
 #include <QSqlQuery>
 #include <QSqlError>
+#include <QTextCodec>
 
 namespace Ui {
 class logon;

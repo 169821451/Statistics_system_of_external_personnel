@@ -25,31 +25,6 @@ login::login(QWidget *parent) :
     shadow_effect->setBlurRadius(8);
     ui->denglu->setGraphicsEffect(shadow_effect);
 
-    // 初始化INI文件路径
-    UserPath = QCoreApplication::applicationDirPath();
-    UserPath += "/User.ini";
-
-    // 判断INI文件是否存在，如果不存在则创建INI文件并写入默认数据
-    QFileInfo File(UserPath);
-    settings = new QSettings(UserPath,QSettings::IniFormat);
-    if(File.exists() == false)
-    {
-        // 创建INI文件
-        //QSettings *Settings = new QSettings(UserPath,QSettings::IniFormat);
-
-        // 设置默认用户名及密码
-        QString UserName = "admin";
-
-        QString PassWord = "admin1";
-
-        // 写入默认数据
-
-        settings->setValue("Users/UsreName",UserName);
-
-        settings->setValue("Users/PassWord",PassWord);
-
-    }
-
 }
 
 login::~login()
@@ -59,7 +34,7 @@ login::~login()
 
 void login::on_denglu_clicked()
 {
-    // 读取ini文件中的用户名及密码
+    // 读取数据库中的用户名及密码
 
 
     Username = ui->lineEdit->text();
