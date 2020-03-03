@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+﻿#include "mainwindow.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])
@@ -30,14 +30,14 @@ int main(int argc, char *argv[])
             w->show();
         }
         else {
-            QMessageBox::information(nullptr,"a","aaa",QMessageBox::Ok);
+            QMessageBox::information(nullptr,"提示","数据库连接成功",QMessageBox::Ok);
             return 0;
         }
     }
     else
     {
         qDebug()<<db.lastError().text();
-        QMessageBox::warning(NULL,"error","open mysql failed",QMessageBox::Ok);
+        QMessageBox::warning(nullptr,"error","打开数据库失败",QMessageBox::Ok);
         return 0;
     }
 

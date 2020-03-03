@@ -26,17 +26,20 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+        addinformation.cpp \
         login.cpp \
         logon.cpp \
         main.cpp \
         mainwindow.cpp
 
 HEADERS += \
+        addinformation.h \
         login.h \
         logon.h \
         mainwindow.h
 
 FORMS += \
+        addinformation.ui \
         login.ui \
         logon.ui \
         mainwindow.ui

@@ -1,5 +1,9 @@
-#ifndef LOGON_H
+﻿#ifndef LOGON_H
 #define LOGON_H
+
+#if _MSC_VER >= 1600
+#pragma execution_character_set("utf-8")
+#endif
 
 #include <QDialog>
 #include <QString>
@@ -14,6 +18,12 @@
 #include <QSqlQuery>
 #include <QSqlError>
 #include <QTextCodec>
+#include <QSqlQueryModel>
+#include <QTabWidget>
+#include <QTableView>
+#include <QStandardItemModel>
+#include <QFileDialog>
+#include <QFile>
 
 namespace Ui {
 class logon;

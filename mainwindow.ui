@@ -14,16 +14,6 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QTableWidget" name="tableWidget">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>60</y>
-      <width>851</width>
-      <height>651</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
@@ -34,7 +24,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>查询全部</string>
     </property>
    </widget>
    <widget class="QPushButton" name="nameselect_2">
@@ -47,7 +37,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>查询</string>
+     <string>姓名查询</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="nameselect">
@@ -65,12 +55,12 @@
      <rect>
       <x>390</x>
       <y>20</y>
-      <width>75</width>
+      <width>91</width>
       <height>23</height>
      </rect>
     </property>
     <property name="text">
-     <string>查询</string>
+     <string>身份证号查询</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="address">
@@ -92,6 +82,16 @@
       <height>22</height>
      </rect>
     </property>
+    <property name="maximumDate">
+     <date>
+      <year>9999</year>
+      <month>12</month>
+      <day>31</day>
+     </date>
+    </property>
+    <property name="displayFormat">
+     <string>yyyy-MM-dd</string>
+    </property>
     <property name="calendarPopup">
      <bool>true</bool>
     </property>
@@ -107,6 +107,55 @@
     </property>
     <property name="text">
      <string>查询</string>
+    </property>
+   </widget>
+   <widget class="QTableView" name="tableView">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>80</y>
+      <width>830</width>
+      <height>610</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>890</x>
+      <y>150</y>
+      <width>101</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>新增信息</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>890</x>
+      <y>290</y>
+      <width>101</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>删除单条信息</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_4">
+    <property name="geometry">
+     <rect>
+      <x>890</x>
+      <y>220</y>
+      <width>101</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>批量录入</string>
     </property>
    </widget>
   </widget>
